@@ -219,13 +219,13 @@
             </div>`);
     },
     showItemTags(gallery, position, tags) {
-      var tagItems =
+      const tagItems =
         '<li class="nav-item"><span class="nav-link active active-tag"  data-images-toggle="all">Tous</span></li>';
       $.each(tags, function(index, value) {
         tagItems += `<li class="nav-item active">
                 <span class="nav-link"  data-images-toggle="${value}">${value}</span></li>`;
       });
-      var tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
+      const tagsRow = `<ul class="my-4 tags-bar nav nav-pills">${tagItems}</ul>`;
 
       if (position === "bottom") {
         gallery.append(tagsRow);
@@ -242,7 +242,7 @@
       $(".active.active-tag").removeClass("active active-tag");
       $(this).addClass("active-tag active");
 
-      var tag = $(this).data("images-toggle");
+      const tag = $(this).data("images-toggle");
 
       $(".gallery-item").each(function() {
         $(this)
